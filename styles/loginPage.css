@@ -1,0 +1,13 @@
+/* :root {
+    --dark: #16191c;
+    --dark-x: #1e2126;
+    --light: #ffffff;
+} */
+
+.colorBody {
+    background-color: #16191c;
+}
+
+.logoTamaño {
+    width: 25%;
+}
