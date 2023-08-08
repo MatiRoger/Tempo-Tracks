@@ -44,18 +44,17 @@ class Song {
 		this._duration = duracion;
 	}
 } 
-let songIndex = 1;
 let agregarCancion = (event) => {
-  event.preventDefault();
-  let newSong = new Song(songIndex);
-  songIndex++;
+  //event.preventDefault();
+  let storedSongs = JSON.parse(localStorage.getItem('songs') || '[]');
+  let newSong = new Song(storedSongs.length+1);
+
   newSong._tittle = document.getElementById('tittleInput').value;
   newSong._artist = document.getElementById('artistInput').value;
   newSong._category = document.getElementById('categoryInput').value;
   newSong._image = document.getElementById('imgInput').value;
   newSong._duration = document.getElementById('durationInput').value;
   
-  let storedSongs = JSON.parse(localStorage.getItem('songs') || '[]');
   if(storedSongs.find((song)=>song._tittle===newSong._tittle&&song._artist===newSong._artist)){
 		alert('Esta canción ya existe!');
 		return
@@ -75,9 +74,17 @@ let agregarCancion = (event) => {
       const row = document.createElement('tr');
         for (const key in song) {
           if(key!=='_category'){
-          const cell = document.createElement('td');
-          cell.textContent = song[key];
-          row.appendChild(cell);
+            const cell = document.createElement('td');
+            cell.textContent = song[key];
+            row.appendChild(cell);
+          }else{
+            const editCell = document.createElement('td');
+            editCell.innerHTML = '<i class="bi bi-pen"></i>';
+            row.appendChild(editCell);
+            const deleteCell = document.createElement('td');
+            deleteCell.innerHTML = '<i class="bi bi-trash"></i>';
+            row.appendChild(deleteCell);
+            break;
           }
       }
       document.getElementById('songsTable').appendChild(row);
