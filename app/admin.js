@@ -79,9 +79,11 @@ let agregarCancion = (event) => {
             row.appendChild(cell);
           }else{
             const editCell = document.createElement('td');
+            editCell.style='text-align:center;color:#DC00FF;font-size:1.5em;'
             editCell.innerHTML = '<i class="bi bi-pen"></i>';
             row.appendChild(editCell);
             const deleteCell = document.createElement('td');
+            deleteCell.style='text-align:center;color:#d11a2a;font-size:1.5em;'
             deleteCell.innerHTML = '<i class="bi bi-trash"></i>';
             row.appendChild(deleteCell);
             break;
