@@ -46,7 +46,7 @@ class Song {
 } 
 let songIndex = 1;
 let agregarCancion = (event) => {
-  // event.preventDefault();
+  event.preventDefault();
   let newSong = new Song(songIndex);
   songIndex++;
   newSong._tittle = document.getElementById('tittleInput').value;
@@ -54,9 +54,9 @@ let agregarCancion = (event) => {
   newSong._category = document.getElementById('categoryInput').value;
   newSong._image = document.getElementById('imgInput').value;
   newSong._duration = document.getElementById('durationInput').value;
-
-	let storedSongs = JSON.parse(localStorage.getItem('songs') || '[]');
-	if(storedSongs.find((song)=>song._tittle===newSong._tittle&&song._artist===newSong._artist)){
+  
+  let storedSongs = JSON.parse(localStorage.getItem('songs') || '[]');
+  if(storedSongs.find((song)=>song._tittle===newSong._tittle&&song._artist===newSong._artist)){
 		alert('Esta canción ya existe!');
 		return
 	}else {
@@ -64,7 +64,24 @@ let agregarCancion = (event) => {
 		alert('Canción agregada exitosamente!');
 	}
   localStorage.setItem('songs', JSON.stringify(storedSongs));
-	console.log(JSON.parse(localStorage.getItem('songs')));
+  createTable();
 }
-
+  let createTable = () => {
+    const songsArray = JSON.parse(localStorage.getItem('songs') || '[]');
+    while (songsTable.firstChild) {
+      songsTable.removeChild(songsTable.firstChild);
+    }
+    songsArray.forEach(song => {
+      const row = document.createElement('tr');
+        for (const key in song) {
+          if(key!=='_category'){
+          const cell = document.createElement('td');
+          cell.textContent = song[key];
+          row.appendChild(cell);
+          }
+      }
+      document.getElementById('songsTable').appendChild(row);
+    });
+  }
+  createTable();
 
