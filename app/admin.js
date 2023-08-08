@@ -1,4 +1,4 @@
-class Cancion {
+class Song {
   constructor(id){
 	  this._id=id;
     this._tittle='';
@@ -46,8 +46,8 @@ class Cancion {
 } 
 let songIndex = 1;
 let agregarCancion = (event) => {
-  event.preventDefault();
-  let newSong = new Cancion(songIndex);
+  // event.preventDefault();
+  let newSong = new Song(songIndex);
   songIndex++;
   newSong._tittle = document.getElementById('tittleInput').value;
   newSong._artist = document.getElementById('artistInput').value;
@@ -56,10 +56,15 @@ let agregarCancion = (event) => {
   newSong._duration = document.getElementById('durationInput').value;
 
 	let storedSongs = JSON.parse(localStorage.getItem('songs') || '[]');
-	if(storedSongs.find((song)=>song._tittle===newSong._tittle)){
+	if(storedSongs.find((song)=>song._tittle===newSong._tittle&&song._artist===newSong._artist)){
 		alert('Esta canción ya existe!');
 		return
-	}else storedSongs.push(newSong);
+	}else {
+		storedSongs.push(newSong);
+		alert('Canción agregada exitosamente!');
+	}
   localStorage.setItem('songs', JSON.stringify(storedSongs));
 	console.log(JSON.parse(localStorage.getItem('songs')));
 }
+
+

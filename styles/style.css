@@ -11,7 +11,7 @@ header{
 	color: rgba(255, 255, 255, 0.671);
 }
 .mobile-footer{
-	background-color: rgb(138, 43, 226);
+	background-color: #8a2be2;
 	height: 13%;
 }
 
@@ -22,7 +22,7 @@ header{
 	aspect-ratio: 1/1;
 	width: 80px;
 	font-size: 1em;
-	color: rgba(255, 255, 255, 0.671);
+	color: #ffffffab;
 	background-color: #222222ce;
 	border-radius: 10%;
 	text-decoration: none;
@@ -30,4 +30,12 @@ header{
 .admin-buttons i {
 	font-size: 2em;
 	font-weight: 900;
+}
+.modal-content{
+    background-color:#222222;
+    color:#8a2be2;
+}
+.addSong-btn{
+	background-color: #8a2be2;
+	color: #ffffffab;
 }
