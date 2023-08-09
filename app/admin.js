@@ -44,9 +44,10 @@ class Song {
 		this._duration = duracion;
 	}
 } 
-let agregarCancion = (event) => {
+const storedSongs = JSON.parse(localStorage.getItem('songs') || '[]');
+
+let addSong = (event) => {
   //event.preventDefault();
-  let storedSongs = JSON.parse(localStorage.getItem('songs') || '[]');
   let newSong = new Song(storedSongs.length+1);
 
   newSong._tittle = document.getElementById('tittleInput').value;
@@ -57,7 +58,7 @@ let agregarCancion = (event) => {
   
   if(storedSongs.find((song)=>song._tittle===newSong._tittle&&song._artist===newSong._artist)){
 		alert('Esta canción ya existe!');
-		return
+		return;
 	}else {
 		storedSongs.push(newSong);
 		alert('Canción agregada exitosamente!');
@@ -66,12 +67,13 @@ let agregarCancion = (event) => {
   createTable();
 }
   let createTable = () => {
-    const songsArray = JSON.parse(localStorage.getItem('songs') || '[]');
+    //const songsArray = JSON.parse(localStorage.getItem('songs') || '[]');
     while (songsTable.firstChild) {
       songsTable.removeChild(songsTable.firstChild);
     }
-    songsArray.forEach(song => {
+    storedSongs.forEach(song => {
       const row = document.createElement('tr');
+      
         for (const key in song) {
           if(key!=='_category'){
             const cell = document.createElement('td');
@@ -79,12 +81,14 @@ let agregarCancion = (event) => {
             row.appendChild(cell);
           }else{
             const editCell = document.createElement('td');
+            editCell.className = song._id;
             editCell.style='text-align:center;color:#DC00FF;font-size:1.5em;'
-            editCell.innerHTML = '<i class="bi bi-pen"></i>';
+            editCell.innerHTML = '<i class="bi bi-pen"></i> ';
             row.appendChild(editCell);
             const deleteCell = document.createElement('td');
+            deleteCell.className = song._id;
             deleteCell.style='text-align:center;color:#d11a2a;font-size:1.5em;'
-            deleteCell.innerHTML = '<i class="bi bi-trash"></i>';
+            deleteCell.innerHTML = '<i class="bi bi-trash" onclick="deleteSong(event)"></i>';
             row.appendChild(deleteCell);
             break;
           }
@@ -92,5 +96,13 @@ let agregarCancion = (event) => {
       document.getElementById('songsTable').appendChild(row);
     });
   }
+  let deleteSong = (event)=>{
+    let deleteIndex = event.target.parentElement.className;
+    storedSongs.splice(deleteIndex-1,1);
+    for (let index = 0; index < storedSongs.length; index++) {
+      storedSongs[index]._id = index+1;
+    }
+    localStorage.setItem('songs',JSON.stringify(storedSongs));
+    createTable();
+    };
   createTable();
-
