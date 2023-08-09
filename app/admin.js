@@ -45,7 +45,7 @@ class Song {
 	}
 } 
 const storedSongs = JSON.parse(localStorage.getItem('songs') || '[]');
-
+let editionIndexDraft;
 let addSong = (event) => {
   //event.preventDefault();
   let newSong = new Song(storedSongs.length+1);
@@ -83,7 +83,7 @@ let addSong = (event) => {
             const editCell = document.createElement('td');
             editCell.className = song._id;
             editCell.style='text-align:center;color:#DC00FF;font-size:1.5em;'
-            editCell.innerHTML = '<i class="bi bi-pen"></i> ';
+            editCell.innerHTML = '<i class="bi bi-pen"data-bs-toggle="modal" data-bs-target="#editSongModal" onclick="editedSongIndex(event)"></i> ';
             row.appendChild(editCell);
             const deleteCell = document.createElement('td');
             deleteCell.className = song._id;
@@ -105,4 +105,17 @@ let addSong = (event) => {
     localStorage.setItem('songs',JSON.stringify(storedSongs));
     createTable();
     };
+  let editedSongIndex = (event)=>editionIndexDraft = event.target.parentElement.className;
+  let editSong=(event)=>{
+    let editedSong = new Song (parseInt(editionIndexDraft));
+    editedSong._tittle = document.getElementById('tittleEdit').value;
+    editedSong._artist = document.getElementById('artistEdit').value;
+    editedSong._category = document.getElementById('categoryEdit').value;
+    editedSong._image = document.getElementById('imgEdit').value;
+    editedSong._duration = document.getElementById('durationEdit').value;
+
+    storedSongs.splice(editionIndexDraft-1,1,editedSong);
+    localStorage.setItem('songs',JSON.stringify(storedSongs));
+  }
+  
   createTable();
