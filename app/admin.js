@@ -63,7 +63,6 @@ let addSong = (event) => {
 		alert('Canción agregada exitosamente!');
 	}
   localStorage.setItem('songs', JSON.stringify(storedSongs));
-  createTable();
 }
   let createTable = () => {
     while (songsTable.firstChild) {
