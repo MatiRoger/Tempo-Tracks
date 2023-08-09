@@ -47,7 +47,6 @@ class Song {
 const storedSongs = JSON.parse(localStorage.getItem('songs') || '[]');
 let editionIndexDraft;
 let addSong = (event) => {
-  //event.preventDefault();
   let newSong = new Song(storedSongs.length+1);
 
   newSong._tittle = document.getElementById('tittleInput').value;
@@ -67,7 +66,6 @@ let addSong = (event) => {
   createTable();
 }
   let createTable = () => {
-    //const songsArray = JSON.parse(localStorage.getItem('songs') || '[]');
     while (songsTable.firstChild) {
       songsTable.removeChild(songsTable.firstChild);
     }
