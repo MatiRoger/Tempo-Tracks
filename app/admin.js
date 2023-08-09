@@ -113,6 +113,7 @@ let addSong = (event) => {
 
     storedSongs.splice(editionIndexDraft-1,1,editedSong);
     localStorage.setItem('songs',JSON.stringify(storedSongs));
+    createTable();  
   }
   
   createTable();
