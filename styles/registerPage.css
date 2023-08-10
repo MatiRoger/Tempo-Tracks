@@ -3,5 +3,17 @@
 }
 
 .logoTamaño {
-    width: 25%;
+    width: 30%;
+}
+
+.logoTamaño2 {
+    width: 65%;
+}
+
+.estilosForm {
+    border-radius: 20px;
+    background-color: #16191c;
+    box-shadow: 0px 2px 27px 14px rgba(132,2,153,0.75);
+    -webkit-box-shadow: 0px 2px 27px 14px rgba(132,2,153,0.75);
+    -moz-box-shadow: 0px 2px 27px 14px rgba(132,2,153,0.75);
 }
