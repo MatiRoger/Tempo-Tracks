@@ -1,9 +1,22 @@
+/*Colores:
+
+Negro:`#16191c`
+
+Gris: #A1A0A1
+
+violeta: #840299
+
+violeta clarito: #DC00FF
+*/
+
+
+
 *{
 	margin: 0;
 	padding: 0;
 }
 body{
-	background-color: #222222;
+	background-color: #16191c;
 	height: 100vh;
 	/* width: 100vw; */
 }
@@ -11,35 +24,79 @@ header{
 	color: rgba(255, 255, 255, 0.671);
 }
 .mobile-footer{
-	background-color: #840299;
+	background-color: #16191cd2;
 	height: 110px;
-	border-radius: 15px;
+	width: 100vw;
+	/* border-radius: 15px; */
+	position: fixed;
+	bottom: 0;
 }
 
 
 /* ---------------- Admin Page ------------*/
 
-.admin-buttons{
+.footer-buttons{
 	aspect-ratio: 1/1;
 	width: 80px;
 	font-size: 1em;
-	color: #ffffffab;
-	background-color: #222222ce;
+	color: #DC00FF;
+	background-color: #a1a0a131;
 	border-radius: 10%;
 	text-decoration: none;
 }
-.admin-buttons i {
+.footer-buttons i {
 	font-size: 2em;
 	font-weight: 900;
 }
 .modal-content{
-    background-color:#222222;
-    color:#8a2be2;
+    background-color:#A1A0A1;
+    color:#16191c;
 }
-.addSong-btn{
-	background-color: #8a2be2;
+.addSong-btn, .searchSong-btn{
+	background-color: #840299;
 	color: #ffffffab;
 }
 /* table #songsTable td {
 	text-align: center	;
 } */
+
+.songsTableSection{
+	padding-bottom: 110px;
+	background-color: #16191c;
+}
+
+/*-------------Home Page------------*/
+
+.main-section{
+	/* padding-bottom: 110px; */
+	background-color: #16191c;
+	height: 80vh;
+}
+.main-section div {
+	background-color: #a1a0a131;
+	height: 100%;
+	border-radius: 10px;
+}
+.aside-menu{
+	max-width: 90px;
+}
+.aside-buttons {
+	width: 70px;
+	aspect-ratio: 1/1;
+	font-size: 1em;
+	color: #DC00FF;
+	background-color: #a1a0a131;
+	border-radius: 10%;
+	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2em;
+}
+.custom-tooltip {
+	--bs-tooltip-bg: #840299;
+	--bs-tooltip-color: var(--bs-white);
+  }
+.admin-button{
+	font-size: .8em;
+}
