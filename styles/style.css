@@ -43,6 +43,8 @@ header{
 	background-color: #a1a0a131;
 	border-radius: 10%;
 	text-decoration: none;
+	align-items: center;
+	justify-content: center;
 }
 .footer-buttons i {
 	font-size: 2em;
@@ -68,11 +70,12 @@ header{
 /*-------------Home Page------------*/
 
 .main-section{
-	/* padding-bottom: 110px; */
-	background-color: #16191c;
+	padding-bottom: 110px;
+	background-color: #85029965;
 	height: 80vh;
+	min-height: 80vh;
 }
-.main-section div {
+.cards-section, .playlist-section, .aside-menu {
 	background-color: #a1a0a131;
 	height: 100%;
 	border-radius: 10px;
@@ -81,11 +84,11 @@ header{
 	max-width: 90px;
 }
 .aside-buttons {
-	width: 70px;
+	width: 60px;
 	aspect-ratio: 1/1;
 	font-size: 1em;
-	color: #DC00FF;
-	background-color: #a1a0a131;
+	color: rgb(220, 0, 255);
+	background-color: #16191c86;
 	border-radius: 10%;
 	text-decoration: none;
 	display: inline-flex;
@@ -99,4 +102,18 @@ header{
   }
 .admin-button{
 	font-size: .8em;
+}
+.song-card{
+	width: 350px;
+	height: 90px;
+	padding: 0;
+	background-color: #16191c93;
+  	border: 1px solid #DC00FF;
+	backdrop-filter: blur(20px);
+}
+.song-thumbnail{
+	background-image: url(../assets/music-default-thumbnail.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size:contain;
 }
