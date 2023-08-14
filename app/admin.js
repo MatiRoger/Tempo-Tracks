@@ -7,42 +7,6 @@ class Song {
 	  this._image='';
     this._duration='';
   }
-  get id(){
-    return this._id;
-  }
-  set id(id){
-    this._id = id;
-  }
-	get titulo (){
-		return this._tittle;
-	}
-	set titulo(tittle){
-		this._tittle = titulo;
-	}
-	get artista(){
-		return this._artist;
-	}
-	set artista(artist){
-		this._artist = artista;
-	}
-	get categoria(){
-		return this._category;
-	}
-	set categoria(categoria){
-		this._category = categoria;
-	}
-	get imagen(){
-		return this._image;
-	}
-	set imagen(urlImg){
-		this._image = urlImg;
-	}
-	get duracion(){
-		return this._duration;
-	}
-	set duracion(duracion){
-		this._duration = duracion;
-	}
 } 
 const storedSongs = JSON.parse(localStorage.getItem('songs') || '[]');
 let editionIndexDraft;
