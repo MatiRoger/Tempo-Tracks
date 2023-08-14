@@ -37,8 +37,9 @@ header{
 
 .footer-buttons{
 	aspect-ratio: 1/1;
-	width: 80px;
-	font-size: 1em;
+	width: 70px;
+	font-size: .8em;
+	font-weight: 700;
 	color: #DC00FF;
 	background-color: #a1a0a131;
 	border-radius: 10%;
@@ -74,6 +75,7 @@ header{
 	background-color: #85029965;
 	height: 80vh;
 	min-height: 80vh;
+	color: aliceblue;
 }
 .cards-section, .playlist-section, .aside-menu {
 	background-color: #a1a0a131;
@@ -103,17 +105,28 @@ header{
 .admin-button{
 	font-size: .8em;
 }
+
+/*--------- Song cards ----------*/
 .song-card{
 	width: 350px;
 	height: 90px;
 	padding: 0;
 	background-color: #16191c93;
   	border: 1px solid #DC00FF;
-	backdrop-filter: blur(20px);
+	color: aliceblue;
 }
 .song-thumbnail{
 	background-image: url(../assets/music-default-thumbnail.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size:contain;
+}
+.song-specs{
+	color: aliceblue;
+	font-size: 1em;
+}
+.song-options i{
+	color: #DC00FF;
+	font-size: 1.2em;
+	cursor: pointer;
 }
