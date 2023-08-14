@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <link rel="icon" href="../assets/logo-2.png">
+    <link rel="stylesheet" href="../styles/registerPage.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  </head>
+
+<body class="colorBody">
+
+    <main>
+
+      <section class="container-fluid">
+        
+        <div class="row justify-content-center">
+
+          
+          <form class="col-md-6 col-lg-4 col-xl-4 estilosForm p-4 mt-5 mb-5" onsubmit="createUser(event)">
+            
+            <div class="px-lg-1 pt-lg-1 pb-lg-1 p-4 d-inline-block colorFondo d-flex">
+              <div>
+                <img src="../assets/logo-2.png" class="img-fluid logoTamaño" alt="logo">
+                <img src="../assets/logo-1.png" class="img-fluid logoTamaño2"  alt="nombreLogo">
+
+              </div>
+            </div>
+            
+            <h1 class="text-light fw-bold mb-3 mt-3">Bienvenido</h1>
+
+            <div class="mb-3">
+              <label for="Email" class="form-label fw-bold text-light">Email</label>
+              <input type="email" class="form-control bg-dark border-0 text-light" id="email" aria-describedby="emailHelp">
+            </div>
+
+            <div class="mb-3">
+              <label for="name" class="form-label fw-bold text-light">Nombre</label>
+              <input type="text" class="form-control bg-dark border-0 text-light" id="name">
+              <p id="errorName" class="text-danger fw-bold error">Tu nombre debe de tener minimo 3 caracteres.</p>
+            </div>
+
+            <div class="mb-3">
+              <label for="lastNname" class="form-label fw-bold text-light">Apellido</label>
+              <input type="text" class="form-control bg-dark border-0 text-light" id="lastName">
+              <p id="errorLastName" class="text-danger fw-bold error">Tu apellido debe de tener minimo 3 caracteres.</p>
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label fw-bold text-light">Contraseña</label>
+              <div class="input-group mb-3">
+                <input type="password" class="form-control bg-dark border-0 text-light" id="password" aria-describedby="basic-addon1">
+                <span class="input-group-text showPass border-0 bg-dark" id="basic-addon1" onclick="showPassword()">
+                  <i class="bi bi-eye-slash closeEye" id="eyeClose"></i>
+                  <i class="bi bi-eye openEye" id="eyeOpen"></i>
+                </span>
+                <p id="errorPassword" class="text-danger fw-bold error">Tu Contraseña debe tener minimo: 1 Mayuscula, 1 minuscula, 1 numero y 1 caracter especial "-,_,?,etc".</p>
+            </div>
+            
+            <div class="mb-3 mt-3">
+              <label for="confirmPassword" class="form-label fw-bold text-light">Confirmar Contraseña</label>
+              <div class="input-group mb-3">
+              <input type="password" class="form-control bg-dark border-0 text-light" id="confirmPassword" aria-describedby="basic-addon1">
+              <span class="input-group-text showPass border-0 bg-dark" id="basic-addon1" onclick="showPassword2()">
+                <i class="bi bi-eye-slash closeEye" id="eyeClose2"></i>
+                <i class="bi bi-eye openEye" id="eyeOpen2"></i>
+              </span>
+            </div>
+            <p id="errorConfirmPassword" class="text-danger fw-bold error">Tus Contraseñas no coiciden.</p>
+
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="conditions">
+              <label class="form-check-label text-light fw-bold" for="aceptarCondiciones">Acepto los terminos y condiciones.</label>
+              <p id="errorConditions" class="text-danger fw-bold error">Debes aceptar nuestros terminos y condiciones.</p>
+            </div>
+
+            <button type="submit" class="btn btn-outline-light w-100">Registrarse</button>
+  
+          </form>
+  
+        </div>
+
+      </section>
+
+    </main>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="../app/registerPage.js"></script>
+</body>
+</html>
