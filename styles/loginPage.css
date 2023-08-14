@@ -31,3 +31,20 @@
     background-size: cover;
     background-position: center;
 }
+
+.errorCredenciales {
+    display: none;
+}
+
+.showPass {
+    cursor: pointer;
+}
+
+.openEye {
+    display: none;
+    color: white;
+}
+
+.closeEye {
+    color: white;
+}
