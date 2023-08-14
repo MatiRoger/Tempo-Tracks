@@ -1,0 +1,50 @@
+/* :root {
+    --dark: #16191c;
+    --dark-x: #1e2126;
+    --light: #ffffff;
+    color #DC00FF
+    color2 #840299
+} */
+
+.colorBody {
+    background-color: #16191c;
+}
+
+.logoTamaño {
+    width: 25%;
+}
+
+.carouselNumero1 {
+    background-image: url(../assets/carousel-1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.carouselNumero2 {
+    background-image: url(../assets/carousel-2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.carouselNumero3 {
+    background-image: url(../assets/carousel-3.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.errorCredenciales {
+    display: none;
+}
+
+.showPass {
+    cursor: pointer;
+}
+
+.openEye {
+    display: none;
+    color: white;
+}
+
+.closeEye {
+    color: white;
+}
