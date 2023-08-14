@@ -1,0 +1,47 @@
+.colorBody {
+    background-color: #16191c;
+}
+
+.colorFondo {
+    background-color: white;
+    border-radius: 20px;
+    height: 20%;
+    align-items: center;
+    box-shadow: 0px 2px 27px 14px rgba(132,2,153,0.75);
+    -webkit-box-shadow: 0px 2px 27px 14px rgba(132,2,153,0.75);
+    -moz-box-shadow: 0px 2px 27px 14px rgba(132,2,153,0.75);
+}
+
+.logoTamaño {
+    width: 30%;
+}
+
+.logoTamaño2 {
+    width: 50%;
+    
+}
+
+.estilosForm {
+    border-radius: 20px;
+    background-color: #16191c;
+    box-shadow: 0px 2px 27px 14px rgba(132,2,153,0.75);
+    -webkit-box-shadow: 0px 2px 27px 14px rgba(132,2,153,0.75);
+    -moz-box-shadow: 0px 2px 27px 14px rgba(132,2,153,0.75);
+}
+
+.openEye {
+    display: none;
+    color: white;
+}
+
+.closeEye {
+    color: white;
+}
+
+.showPass {
+    cursor: pointer;
+}
+
+.error {
+    display: none;
+}
