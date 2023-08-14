@@ -73,13 +73,11 @@ header{
 .main-section{
 	padding-bottom: 110px;
 	background-color: #85029965;
-	height: 80vh;
 	min-height: 80vh;
 	color: aliceblue;
 }
 .cards-section, .playlist-section, .aside-menu {
 	background-color: #a1a0a131;
-	height: 100%;
 	border-radius: 10px;
 }
 .aside-menu{
@@ -88,7 +86,6 @@ header{
 .aside-buttons {
 	width: 60px;
 	aspect-ratio: 1/1;
-	font-size: 1em;
 	color: rgb(220, 0, 255);
 	background-color: #16191c86;
 	border-radius: 10%;
@@ -98,28 +95,38 @@ header{
 	justify-content: center;
 	font-size: 2em;
 }
+.nav-item a{
+	color: rgb(220, 0, 255);
+	text-decoration: none;
+}
+.nav-item i {
+	font-size: 2em;
+}
+.nav-item p {
+	font-size: 1em;
+}
 .custom-tooltip {
 	--bs-tooltip-bg: #840299;
 	--bs-tooltip-color: var(--bs-white);
-  }
+}
 .admin-button{
 	font-size: .8em;
 }
 
 /*--------- Song cards ----------*/
 .song-card{
-	width: 350px;
-	height: 90px;
+	height: 100px;
+	max-width: 350px;
 	padding: 0;
 	background-color: #16191c93;
-  	border: 1px solid #DC00FF;
+	border: 1px solid #DC00FF;
 	color: aliceblue;
 }
 .song-thumbnail{
 	background-image: url(../assets/music-default-thumbnail.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size:contain;
+	background-size:cover;
 }
 .song-specs{
 	color: aliceblue;
