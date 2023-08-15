@@ -29,7 +29,7 @@ if(!userAuth || user.email !== 'admin@admin.com'&& user.password !== '@Admin123'
 let signOut = (event)=>{
   event.preventDefault();
   localStorage.removeItem('userAuth');
-  window.location.href = '../index.html';
+  window.location.reload ();
 }
 let showCards = (songsArray) => {
     songsArray.forEach(element => {
