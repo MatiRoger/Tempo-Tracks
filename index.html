@@ -27,15 +27,21 @@
                 <h1>Tempo Tracks</h1>
               </li>
               <li class="nav-item">
-                <a class="d-lg-none text-center" href="./pages/loginPage.html">
+                <a class="user-option d-lg-none text-center" href="./pages/loginPage.html">
                 <i class="bi bi-person-circle"></i>
                 <p>Iniciar Sesión</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="d-lg-none text-center" href="./pages/registerPage.html">            
+                <a class="user-option d-lg-none text-center" href="./pages/registerPage.html">            
                   <i class="bi bi-person-add"></i>
                   <p>Registrarse</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="log-out  d-lg-none text-center" href="./pages/registerPage.html" onclick="signOut(event)" >            
+                  <i class="bi bi-person-fill-x"></i>
+                  <p>Cerrar Sesión</p>
                 </a>
               </li>
             </ul>
@@ -50,16 +56,19 @@
     <main>
       <section class="main-section container-fluid row justify-content-center px-lg-5 mx-0 my-0 pt-2 pt-lg-5 gap-lg-4">
         <div class="aside-menu col-1 d-none d-lg-flex flex-column align-items-center gap-4 pt-5">
-          <a class="aside-buttons text-center"data-bs-toggle="tooltip" data-bs-title="Iniciar Sesión" data-bs-custom-class="custom-tooltip" href="./pages/loginPage.html">
+          <a class="user-option aside-buttons text-center"data-bs-toggle="tooltip" data-bs-title="Iniciar Sesión" data-bs-custom-class="custom-tooltip" href="./pages/loginPage.html">
             <i class="bi bi-person-circle"></i>
           </a>
-          <a class="aside-buttons text-center"data-bs-toggle="tooltip" data-bs-title="Registrarse" data-bs-custom-class="custom-tooltip" href="./pages/registerPage.html">            
+          <a class="user-option aside-buttons text-center"data-bs-toggle="tooltip" data-bs-title="Registrarse" data-bs-custom-class="custom-tooltip" href="./pages/registerPage.html">            
             <i class="bi bi-person-add"></i>
+          </a>
+          <a class="log-out aside-buttons text-center"data-bs-toggle="tooltip" data-bs-title="Cerrar Sesión" data-bs-custom-class="custom-tooltip" href="./pages/adminPage.html" onclick="signOut(event)">            
+            <i class="bi bi-person-fill-x"></i>
           </a>
           <a class="aside-buttons text-center"data-bs-toggle="tooltip" data-bs-title="Top-Global" data-bs-custom-class="custom-tooltip" href="./pages/errorPage.html">            
             <i class="bi bi-fire"></i>
           </a>
-          <a class="aside-buttons text-center"data-bs-toggle="tooltip" data-bs-title="Administrador de Canciones" data-bs-custom-class="custom-tooltip" href="./pages/adminPage.html">            
+          <a class="admin-option aside-buttons text-center"data-bs-toggle="tooltip" data-bs-title="Administrador de Canciones" data-bs-custom-class="custom-tooltip" href="./pages/adminPage.html">            
             <i class="bi bi-house-gear"></i>
           </a>
           <a class="aside-buttons text-center position-relative bottom-0"data-bs-toggle="tooltip" data-bs-title="Acerca de nosotros" data-bs-custom-class="custom-tooltip" href="./pages/aboutUs.html">            
@@ -78,7 +87,7 @@
         <i class="bi bi-fire"></i>
         <p>Tendencias</p>
       </a>
-      <a class="admin-button footer-buttons text-center"href="./pages/adminPage.html">            
+      <a class="admin-option admin-button footer-buttons text-center"href="./pages/adminPage.html">            
         <i class="bi bi-house-gear"></i>
         <p>Admin</p>
       </a>

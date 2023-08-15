@@ -1,3 +1,7 @@
+const storedSongs = JSON.parse(localStorage.getItem('songs') || '[]');
+const userAuth = localStorage.getItem('userAuth');
+const user = JSON.parse(userAuth);
+if(user.email !== 'admin@admin.com'&& user.password !== '@Admin123' || !userAuth)window.location.href = '../index.html';
 class Song {
   constructor(id){
 	  this._id=id;
@@ -8,7 +12,6 @@ class Song {
     this._duration='';
   }
 } 
-const storedSongs = JSON.parse(localStorage.getItem('songs') || '[]');
 let editionIndexDraft;
 let addSong = (event) => {
   let newSong = new Song(storedSongs.length+1);
