@@ -31,7 +31,6 @@ let signOut = (event)=>{
   localStorage.removeItem('userAuth');
   window.location.href = '../index.html';
 }
-
 let showCards = (songsArray) => {
     songsArray.forEach(element => {
         let songCard = document.createElement('div');
@@ -49,4 +48,19 @@ let showCards = (songsArray) => {
         cardSection.appendChild(songCard);
     });
 }
+let filterSongs = (event) =>{
+  event.preventDefault();
+  let filterBy = document.getElementById('songSearch').value.toLowerCase();
+  let filteredSongs = storedSongs.filter((song) => 
+    song._tittle.toLowerCase() === filterBy || song._artist.toLowerCase() === filterBy
+  );
+  if(filterBy.length!==0){
+    while (cardSection.firstChild) {
+      cardSection.removeChild(cardSection.firstChild);
+    }
+    showCards(filteredSongs)
+  }
+  else window.location.reload();
+  }
 showCards(storedSongs);
+
