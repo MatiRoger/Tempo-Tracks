@@ -21,7 +21,10 @@ const userAuth = (event) => {
 
     const storageUsers = JSON.parse(localStorage.getItem("users"));
     const errorAuthentication = document.getElementById("errorAuthentication");
-
+    if(!storageUsers){
+        alert('Usuario inexistente');
+        return;
+    }
     const userAuthentication = storageUsers.find((user) => {
         if (user.email === userEmail && user.password === userPassword) {
             return user;
