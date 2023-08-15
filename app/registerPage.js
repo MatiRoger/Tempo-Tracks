@@ -56,12 +56,14 @@ const createUser = (event) => {
 
     if (newUser.name.length < 3) {
         errores.errorName.style.display = "block"
+        return;
     } else {
         errores.errorName.style.display = "none"
     }
 
     if (newUser.lastName.length < 3) {
         errores.errorLastName.style.display = "block"
+        return;
     } else {
         errores.errorLastName.style.display = "none"
     }
@@ -73,12 +75,14 @@ const createUser = (event) => {
 
     if (!passwordRegex.test(newUser.password)) {
         errores.errorPassword.style.display = "block"
+        return;
     } else {
         errores.errorPassword.style.display = "none"
     }
 
     if (newUser.password !== confirmPassword) {
         errores.errorConfirmPassword.style.display = "block"
+        return;
     } else {
         errores.errorConfirmPassword.style.display = "none"
     }
@@ -101,9 +105,7 @@ const createUser = (event) => {
         return;
     } else {
         users.push(newUser)
+        localStorage.setItem("users", JSON.stringify(users));
+        window.location.href = "http://127.0.0.1:5500/pages/loginPage.html"
     }
-
-    localStorage.setItem("users", JSON.stringify(users));
-
-     window.location.href = "http://127.0.0.1:5500/pages/loginPage.html"
 }
