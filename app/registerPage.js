@@ -106,6 +106,6 @@ const createUser = (event) => {
     } else {
         users.push(newUser)
         localStorage.setItem("users", JSON.stringify(users));
-        window.location.href = "http://127.0.0.1:5500/pages/loginPage.html"
+        window.location.href = "http://matiroger.github.io/Tempo-Tracks/pages/loginPage.html"
     }
 }
