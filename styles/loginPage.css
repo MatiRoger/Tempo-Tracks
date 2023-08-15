@@ -5,7 +5,10 @@
     color #DC00FF
     color2 #840299
 } */
-
+*{
+    font-family: 'Ubuntu', sans-serif;
+	font-family: 'Ysabeau SC', sans-serif;
+}
 .colorBody {
     background-color: #16191c;
 }
