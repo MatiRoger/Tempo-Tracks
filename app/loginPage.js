@@ -39,7 +39,7 @@ const userAuth = (event) => {
 
 const link = document.getElementById("registerUser")
 
-link.setAttribute("href", "http://127.0.0.1:5500/pages/registerPage.html")
+link.setAttribute("href", "https://matiroger.github.io/Tempo-Tracks/pages/registerPage.html")
 
 
 
