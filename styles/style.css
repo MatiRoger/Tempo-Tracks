@@ -98,6 +98,9 @@ header{
 	justify-content: center;
 	font-size: 2em;
 }
+.nav-item .log-out,.log-out{
+	color: red;
+}
 .nav-item a{
 	color: rgb(220, 0, 255);
 	text-decoration: none;
