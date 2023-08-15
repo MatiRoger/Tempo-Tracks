@@ -24,20 +24,20 @@ const userAuth = (event) => {
 
     const userAuthentication = storageUsers.find((user) => {
         if (user.email === userEmail && user.password === userPassword) {
-            return user
+            return user;
         }
     })
 
     if (userAuthentication) {
         localStorage.setItem(("userAuth"), JSON.stringify(userAuthentication));
         errorAuthentication.style.display = "none";
+        window.location.href = '../index.html'
     } else {
         errorAuthentication.style.display = "block";
+        return;
     }
 
 };
-
-const link = document.getElementById("registerUser")
 
 
 
