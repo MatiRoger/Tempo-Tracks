@@ -40,9 +40,9 @@ let showCards = (songsArray) => {
           <h5>${element._tittle}</h5>
           <p>${element._artist}</p>
         </div>
-        <div class="song-options col-2 d-flex flex-column justify-content-around align-items-end">
-          <i class="bi bi-plus-circle-dotted"></i>              
-          <i class="bi bi-info-circle" data-bs-toggle="modal" data-bs-target="#songInfoModal" onclick="showSongInfo(event)"id="${element._id}"></i>
+        <div class="song-options col-2 d-flex flex-column justify-content-around align-items-end"id="${element._id}">
+          <i class="bi bi-youtube"onclick="playSong(event)"></i>              
+          <i class="bi bi-info-circle" data-bs-toggle="modal" data-bs-target="#songInfoModal" onclick="showSongInfo(event)"></i>
           <span>${element._duration}</span>
         </div>`;
         if(element._image.length>0){
@@ -54,7 +54,7 @@ let showCards = (songsArray) => {
     });
 }
 let showSongInfo = (event) => {
-  let song = storedSongs[parseInt(event.target.id)-1];
+  let song = storedSongs[parseInt(event.target.parentElement.id)-1];
   const songInfo = document.querySelector('#songInfo'); 
   songInfo.innerHTML =
     `<div class="song-thumbnail"></div>
@@ -68,6 +68,11 @@ let showSongInfo = (event) => {
   }else{
     songInfo.firstChild.setAttribute("style","background-image: url(./assets/music-default-thumbnail.jpg);")
   }
+}
+let playSong = (event) => {
+  let song = storedSongs[parseInt(event.target.parentElement.id)-1];
+  let searchQuery = song._tittle.trim().replace(' ','+').toLowerCase() + '+'+ song._artist.trim().replace(' ', '+').toLowerCase();
+  window.open(`https://www.youtube.com/results?search_query=${searchQuery}`, '_blank');
 }
 let filterSongs = (event) =>{
   event.preventDefault();
