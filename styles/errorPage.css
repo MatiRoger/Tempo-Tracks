@@ -44,7 +44,8 @@
     font-size: 4rem;
     cursor: pointer;
     padding: 0 .1em;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+
 } 
 
 .logo {
@@ -98,5 +99,29 @@
 
     .logo {
         margin-top: 50px;
+    }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+    .container {
+        padding: 10px;
+        margin: 150px;
+    }
+
+    .body {
+        padding: 15px;
+    }
+
+    .titulo {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .explicacion, .regresa {
+        font-size: 12px;
+    }
+
+    .logo {
+        margin-top: 30px;
     }
 }
