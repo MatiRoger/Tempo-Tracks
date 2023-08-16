@@ -48,7 +48,7 @@ let showCards = (songsArray) => {
         if(element._image.length>0){
           songCard.firstElementChild.setAttribute("style",`	background-image: url(${element._image});`)
         }else{
-          songCard.firstChild.setAttribute("style","background-image: url(../assets/music-default-thumbnail.jpg);")
+          songCard.firstChild.setAttribute("style","background-image: url(./assets/music-default-thumbnail.jpg);")
         }
         cardSection.appendChild(songCard);
     });
@@ -66,7 +66,7 @@ let showSongInfo = (event) => {
   if(song._image.length>0){
     songInfo.firstElementChild.setAttribute("style",`	background-image: url(${song._image});`)
   }else{
-    songInfo.firstChild.setAttribute("style","background-image: url(../assets/music-default-thumbnail.jpg);")
+    songInfo.firstChild.setAttribute("style","background-image: url(./assets/music-default-thumbnail.jpg);")
   }
 }
 let filterSongs = (event) =>{
