@@ -28,6 +28,7 @@ if(!userAuth || user.email !== 'admin@admin.com'&& user.password !== '@Admin123'
 let signOut = (event)=>{
   event.preventDefault();
   localStorage.removeItem('userAuth');
+  alert("Sesión Finalizada");
   window.location.reload ();
 }
 let showCards = (songsArray) => {
