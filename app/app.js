@@ -58,10 +58,10 @@ let showSongInfo = (event) => {
   const songInfo = document.querySelector('#songInfo'); 
   songInfo.innerHTML =
     `<div class="song-thumbnail"></div>
-    <p><strong>Título:</strong> ${song._tittle}
-    <p><strong>Artista:</strong> ${song._artist}
-    <p><strong>Género Musical:</strong> ${song._category}
-    <p><strong>Duración:</strong> ${song._duration}`
+    <p><strong>Título:</strong> ${song._tittle}</p>
+    <p><strong>Artista:</strong> ${song._artist}</p>
+    <p><strong>Género Musical:</strong> ${song._category}</p>
+    <p><strong>Duración:</strong> ${song._duration}</p>`
     ;
   if(song._image.length>0){
     songInfo.firstElementChild.setAttribute("style",`	background-image: url(${song._image});`)
