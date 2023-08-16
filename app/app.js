@@ -1,6 +1,5 @@
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
-const playlistSection = document.querySelector('.playlist-section');
 const cardSection = document.querySelector('.cards-section');
 const storedSongs = JSON.parse(localStorage.getItem('songs')) || '[]';
 const userAuth = localStorage.getItem('userAuth');
@@ -70,6 +69,10 @@ let showSongInfo = (event) => {
   }
 }
 let playSong = (event) => {
+  if(!userAuth){
+    alert("Por favor inicia sesión para poder reproducir esto.");
+    return;
+  }
   let song = storedSongs[parseInt(event.target.parentElement.id)-1];
   let searchQuery = song._tittle.trim().replace(' ','+').toLowerCase() + '+'+ song._artist.trim().replace(' ', '+').toLowerCase();
   window.open(`https://www.youtube.com/results?search_query=${searchQuery}`, '_blank');
