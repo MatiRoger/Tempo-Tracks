@@ -79,7 +79,16 @@ header{
 	min-height: 80vh;
 	color: aliceblue;
 }
-.cards-section, .playlist-section, .aside-menu {
+.main-section .modal-content{
+	background-color: #312138;
+	color: aliceblue;
+	border: solid 4px #840299;
+}
+.main-section .modal-content strong{
+	font-size: 1.2em;
+	color: #DC00FF;
+}
+.cards-section, .aside-menu {
 	background-color: #a1a0a131;
 	border-radius: 10px;
 }
@@ -118,6 +127,7 @@ header{
 .admin-button{
 	font-size: .8em;
 }
+
 
 /*--------- Song cards ----------*/
 .song-card{

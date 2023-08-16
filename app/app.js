@@ -42,11 +42,19 @@ let showCards = (songsArray) => {
         </div>
         <div class="song-options col-2 d-flex flex-column justify-content-around align-items-end">
           <i class="bi bi-plus-circle-dotted"></i>              
-          <i class="bi bi-info-circle"></i>
+          <i class="bi bi-info-circle" data-bs-toggle="modal" data-bs-target="#songInfoModal" onclick="showSongInfo(event)"id="${element._id}"></i>
           <span>${element._duration}</span>
         </div>`;
         cardSection.appendChild(songCard);
     });
+}
+let showSongInfo = (event) => {
+  let song = storedSongs[parseInt(event.target.id)-1];
+  document.querySelector('#songInfo').innerHTML =
+    `<p><strong>Título:</strong> ${song._tittle}
+    <p><strong>Artista:</strong> ${song._artist}
+    <p><strong>Género Musical:</strong> ${song._category}
+    <p><strong>Duración:</strong> ${song._duration}`;
 }
 let filterSongs = (event) =>{
   event.preventDefault();

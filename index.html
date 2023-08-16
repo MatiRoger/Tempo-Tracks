@@ -56,6 +56,20 @@
     </header>
     <main>
       <section class="main-section container-fluid row justify-content-center px-lg-5 mx-0 my-0 pt-2 pt-lg-5 gap-lg-4">
+        <div class="modal fade" id="songInfoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Información de Canción</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body" id="songInfo"></div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="aside-menu col-1 d-none d-lg-flex flex-column align-items-center gap-4 pt-5">
           <a class="user-option aside-buttons text-center"data-bs-toggle="tooltip" data-bs-title="Iniciar Sesión" data-bs-custom-class="custom-tooltip" href="./pages/loginPage.html">
             <i class="bi bi-person-circle"></i>
@@ -77,9 +91,6 @@
           </a>
         </div>
         <div class="cards-section col-12 col-lg-7 container-fluid row py-3 py-2 py-lg-5 px-lg-4">
-        </div>
-        <div class="playlist-section col-3 d-none d-lg-flex text-center py-lg-2 px-lg-5">
-          <h3>Tu lista de reproduccion</h3>
         </div>
       </section>
     </main>
