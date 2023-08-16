@@ -45,16 +45,29 @@ let showCards = (songsArray) => {
           <i class="bi bi-info-circle" data-bs-toggle="modal" data-bs-target="#songInfoModal" onclick="showSongInfo(event)"id="${element._id}"></i>
           <span>${element._duration}</span>
         </div>`;
+        if(element._image.length>0){
+          songCard.firstElementChild.setAttribute("style",`	background-image: url(${element._image});`)
+        }else{
+          songCard.firstChild.setAttribute("style","background-image: url(../assets/music-default-thumbnail.jpg);")
+        }
         cardSection.appendChild(songCard);
     });
 }
 let showSongInfo = (event) => {
   let song = storedSongs[parseInt(event.target.id)-1];
-  document.querySelector('#songInfo').innerHTML =
-    `<p><strong>Título:</strong> ${song._tittle}
+  const songInfo = document.querySelector('#songInfo'); 
+  songInfo.innerHTML =
+    `<div class="song-thumbnail"></div>
+    <p><strong>Título:</strong> ${song._tittle}
     <p><strong>Artista:</strong> ${song._artist}
     <p><strong>Género Musical:</strong> ${song._category}
-    <p><strong>Duración:</strong> ${song._duration}`;
+    <p><strong>Duración:</strong> ${song._duration}`
+    ;
+  if(song._image.length>0){
+    songInfo.firstElementChild.setAttribute("style",`	background-image: url(${song._image});`)
+  }else{
+    songInfo.firstChild.setAttribute("style","background-image: url(../assets/music-default-thumbnail.jpg);")
+  }
 }
 let filterSongs = (event) =>{
   event.preventDefault();

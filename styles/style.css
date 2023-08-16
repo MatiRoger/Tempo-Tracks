@@ -88,6 +88,11 @@ header{
 	font-size: 1.2em;
 	color: #DC00FF;
 }
+.main-section .modal-content .song-thumbnail{
+	height: 150px;
+	width: 100%;
+	background-size: contain;
+}
 .cards-section, .aside-menu {
 	background-color: #a1a0a131;
 	border-radius: 10px;
@@ -139,7 +144,6 @@ header{
 	color: aliceblue;
 }
 .song-thumbnail{
-	background-image: url(../assets/music-default-thumbnail.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size:cover;
