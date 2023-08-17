@@ -22,7 +22,7 @@ image.addEventListener('mouseout', () => {
  function mostrarModalYRedirigir() {
      modal.style.display = 'block';
      setTimeout(() => {
-         window.location.href = '/index.html'; // Cambia la URL a la página de inicio
+         window.location.href = 'https://matiroger.github.io/Tempo-Tracks/'; // Cambia la URL a la página de inicio
      }, 2000); // 10000 milisegundos = 10 segundos
  }
 
