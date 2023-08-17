@@ -4,7 +4,7 @@
 }
 
 .body {
-    font-family: sans-serif; 
+	font-family: 'Ubuntu', sans-serif; 
     background-color: rgba(132,2,153,0.75);
     margin: 60px;
     padding: 60px;
@@ -40,8 +40,8 @@
 .titulo {
     text-align: center;
     padding-top: 450px;
-    font-family: system-ui, sans-serif;
-    font-size: 4rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 6rem;
     cursor: pointer;
     padding: 0 .1em;
     margin-bottom: 20px;
@@ -70,7 +70,7 @@
 
 .container:hover {
     --_i: 100%;
-    color: #CC333F;
+    color: #ede6e6;
     transition: .3s, -webkit-mask-size .3s .3s;
 } 
 

@@ -6,14 +6,18 @@
 <title>Error 404 - Página no encontrada</title>
 <link rel="icon" href="../assets/logo-2.png">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="../styles/errorPage.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Ysabeau+SC:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles/errorPage.css">
 </head>
 <body class="body">
 <div class="container">
     <div class="titulo"> <h3> ERROR 404</h1></div>
     <div class="explicacion"> <p> Lo sentimos, la página que estas buscando no se encuentra disponible.</p></div>
-    <div class="regresa"> <p> Por favor, regresa  <a href="https://matiroger.github.io/Tempo-Tracks/" class="text-primary">a la página de inicio</a>.</p></div>
-    <div class="logo">    <img src="../assets/logo-2.png" alt="Página no encontrada" class="img-fluid"></div>
+    <div class="regresa"> <p> Por favor, regresa  <button id="mostrarModal">Inicio</button></p></div>
+    <div id="miModal" class="modal"><p>Redireccionando en 3 segundos...</p></div>
+    <div class="logo">    <img src="/assets/logo-2.png" alt="Página no encontrada" class="img-fluid"></div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
