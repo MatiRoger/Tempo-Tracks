@@ -1,6 +1,13 @@
 const storedSongs = JSON.parse(localStorage.getItem('songs') || '[]');
 const userAuth = localStorage.getItem('userAuth');
 const user = JSON.parse(userAuth);
+const titleEdit = document.getElementById('tittleEdit');
+const artistEdit = document.getElementById('artistEdit');
+const categoryEdit = document.getElementById('categoryEdit');
+const imageEdit = document.getElementById('imgEdit');
+const durationEdit = document.getElementById('durationEdit');
+
+
 if(user.email !== 'admin@admin.com'&& user.password !== '@Admin123' || !userAuth)window.location.href = '../index.html';
 class Song {
   constructor(id){
@@ -69,14 +76,22 @@ let addSong = (event) => {
     localStorage.setItem('songs',JSON.stringify(storedSongs));
     createTable();
     };
-  let editedSongIndex = (event)=>editionIndexDraft = event.target.parentElement.className;
+  let editedSongIndex = (event)=>{
+    editionIndexDraft = event.target.parentElement.className;
+    const song = storedSongs.find(song=>song._id===parseInt(editionIndexDraft));
+    titleEdit.value = song._tittle;
+    artistEdit.value = song._artist;
+    categoryEdit.value = song._category;
+    imageEdit.value = song._image;
+    durationEdit.value = song._duration;
+  }
   let editSong=(event)=>{
     let editedSong = new Song (parseInt(editionIndexDraft));
-    editedSong._tittle = document.getElementById('tittleEdit').value;
-    editedSong._artist = document.getElementById('artistEdit').value;
-    editedSong._category = document.getElementById('categoryEdit').value;
-    editedSong._image = document.getElementById('imgEdit').value;
-    editedSong._duration = document.getElementById('durationEdit').value;
+    editedSong._tittle = titleEdit.value;
+    editedSong._artist = artistEdit.value;
+    editedSong._category = categoryEdit.value;
+    editedSong._image = imageEdit.value;
+    editedSong._duration = durationEdit.value;
 
     storedSongs.splice(editionIndexDraft-1,1,editedSong);
     localStorage.setItem('songs',JSON.stringify(storedSongs));
